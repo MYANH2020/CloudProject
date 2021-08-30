@@ -6,9 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
+  <script>
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='block';
+  document.getElementById(hidden).style.display='none';
+  return false;
+}
+</script>
 </head>
 
 <body>
+  <div id="Page1">
   <main>
     <h1>Hello Friends!</h1>
   </main>
@@ -26,10 +34,14 @@
   <div>
   <p> Created for my SWE 4633 class</p>
     </div>
-  <div>
-  <a href="https://nice-desert-06aef7610.azurestaticapps.net">Next Page</a>
-    </div>
-  
+   <a href="#" onclick="return show('Page2','Page1');">Show page 2</a>
+  </div>
+   <div id="Page2" style="display:none">
+     <p> Gorgous image <br/>
+       <img src="flower1.jpeg" alt="Flower">
+     </p>
+    <a href="#" onclick="return show('Page1','Page2');">Show page 1</a>
+  </div>
 </body>
 
 </html>
